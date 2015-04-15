@@ -75,7 +75,7 @@ void ofApp::setup(){
     
     gui0->addSlider("ROI", roi, 100.0, 0.0);
     
-    gui0->addSlider("REPULSION FORCE", repulsion, 100.0, 50.0);
+    gui0->addSlider("REPULSION FORCE", repulsion, 10.0, 0.0);
     gui0->addSlider("FRICTION", friction, 100.0, 0.0);
     
     
@@ -435,10 +435,10 @@ void ofApp::guiEvent(ofxUIEventArgs &e)
         ofxUISlider *slider = e.getSlider();
         bulgeFactor= (slider->getScaledValue());
     }
-    if(e.getName() == "COLLISION OFFSET")
+    if(e.getName() == "REPULSION FORCE")
     {
         ofxUISlider *slider = e.getSlider();
-        collisionOffset= (slider->getScaledValue());
+        repulsion= (slider->getScaledValue());
     }
     if(e.getName() == "FRICTION")
     {

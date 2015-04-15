@@ -39,7 +39,7 @@ void points::create(){
 void points::draw()
 {
     ofNoFill();
-    ofSetColor(255,255,255,100);
+    ofSetColor(255,255,255);
     ofSetSphereResolution(1);
     //    sphere.setPosition(pos);
 //    sphere.setScale(1.01f);
