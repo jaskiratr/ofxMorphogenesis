@@ -479,15 +479,15 @@ void ofApp::exit()
 }
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-    int r=radius;      // Radius
+    int r=10;      // Radius
     
     if(key == 'v'){
         
         int size = pt.size();
         for(int i = 0; i< size; i++){
-            float x = pt[i].x + ofRandom(-30, 30);    // Find direction from center
-            float y = pt[i].y + ofRandom(-30, 30);    // Then add accordingly??
-            float z = pt[i].z + ofRandom(-30, 30);
+            float x = pt[i].x + ofRandom(-r, r);    // Find direction from center
+            float y = pt[i].y + ofRandom(-r, r);    // Then add accordingly??
+            float z = pt[i].z + ofRandom(-r, r);
             
             pt.push_back(points(x,y,z));
             
