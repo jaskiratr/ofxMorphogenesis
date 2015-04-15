@@ -14,6 +14,8 @@ www.andylomas.com/extra/andylomas_paper_cellular_forms_aisb50.pdf
 ## Controls 
 - Use 'v' to add cells
 - 'q','w','e','t' to show forces
+- 'f' to toggle full screen
+- 'c' to toggle cam controls
 - 'r' to reset
 - 'R' to record frames to png sequence
 - '1','2','3','4' to enable/disable forces
