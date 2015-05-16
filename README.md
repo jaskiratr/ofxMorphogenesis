@@ -5,6 +5,7 @@ www.andylomas.com/extra/andylomas_paper_cellular_forms_aisb50.pdf
 
 ## Currently work in progress
 `need to find correct force factors and verify the equations for physics`
+To be updated soon...
 
 ## Dependecies
 - ofxUI (https://github.com/rezaali/ofxUI) 
@@ -22,4 +23,4 @@ www.andylomas.com/extra/andylomas_paper_cellular_forms_aisb50.pdf
 - 'p' to play/pause simulation
 
 ![Morphogenesis](http://41.media.tumblr.com/c9c511811f0551b79991a7597a46f391/tumblr_nlk1hrxyxL1rssn8bo1_1280.jpg)
-
+https://vimeo.com/127951721
