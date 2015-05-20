@@ -3,6 +3,8 @@
 #include "ofMain.h"
 #include "point.h"
 #include "ofxUI.h"
+#include "ofxMetaballs.h"
+
 
 class ofApp : public ofBaseApp{
     
@@ -95,6 +97,8 @@ public:
     void guiEvent(ofxUIEventArgs &e);
     bool drawPadding;
     float red, green, blue;
+    
+    MarchingCubes iso;
     
     
 };

@@ -8,37 +8,37 @@
 <Widget>
     <Kind>4</Kind>
     <Name>LINKED LEN</Name>
-    <Value>24.187191010</Value>
+    <Value>22.857143402</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>SPRING FACTOR</Name>
-    <Value>3.544827461</Value>
+    <Value>0.872413754</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>PLANAR FACTOR</Name>
-    <Value>0.001399015</Value>
+    <Value>0.001709360</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>BULGE FACTOR</Name>
-    <Value>2.463054180</Value>
+    <Value>10.837438583</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>ROI</Name>
-    <Value>79.310348511</Value>
+    <Value>63.448276520</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>REPULSION FORCE</Name>
-    <Value>0.541871905</Value>
+    <Value>0.049261082</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>FRICTION</Name>
-    <Value>1.477832556</Value>
+    <Value>1.970443368</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>

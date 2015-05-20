@@ -58,6 +58,8 @@
 		C80A37551ADDDBFE004DA98A /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C80A37511ADDDBFE004DA98A /* tinyxmlparser.cpp */; };
 		C863744E1AB55CA900336EDD /* point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C863744C1AB55CA900336EDD /* point.cpp */; };
 		C863745B1AB65EC300336EDD /* ofxVideoRecorder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C86374591AB65EC300336EDD /* ofxVideoRecorder.cpp */; };
+		C8C231FB1AE059630010F840 /* MarchingCubes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C8C231F61AE059630010F840 /* MarchingCubes.cpp */; };
+		C8C231FC1AE059630010F840 /* MarchingTetrahedrons.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C8C231F81AE059630010F840 /* MarchingTetrahedrons.cpp */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
 		E45BE97C0E8CC7DD009D7055 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9720E8CC7DD009D7055 /* ApplicationServices.framework */; };
@@ -214,6 +216,11 @@
 		C863744D1AB55CA900336EDD /* point.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = point.h; sourceTree = "<group>"; };
 		C86374591AB65EC300336EDD /* ofxVideoRecorder.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxVideoRecorder.cpp; sourceTree = "<group>"; };
 		C863745A1AB65EC300336EDD /* ofxVideoRecorder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxVideoRecorder.h; sourceTree = "<group>"; };
+		C8C231F61AE059630010F840 /* MarchingCubes.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MarchingCubes.cpp; sourceTree = "<group>"; };
+		C8C231F71AE059630010F840 /* MarchingCubes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarchingCubes.h; sourceTree = "<group>"; };
+		C8C231F81AE059630010F840 /* MarchingTetrahedrons.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MarchingTetrahedrons.cpp; sourceTree = "<group>"; };
+		C8C231F91AE059630010F840 /* MarchingTetrahedrons.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarchingTetrahedrons.h; sourceTree = "<group>"; };
+		C8C231FA1AE059630010F840 /* ofxMetaballs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxMetaballs.h; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E45BE9710E8CC7DD009D7055 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
 		E45BE9720E8CC7DD009D7055 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = /System/Library/Frameworks/ApplicationServices.framework; sourceTree = "<absolute>"; };
@@ -268,6 +275,7 @@
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				C8C231F41AE059630010F840 /* ofxMetaballs */,
 				C80A37491ADDDBFE004DA98A /* ofxXmlSettings */,
 				C80A36BD1ADDD7CD004DA98A /* ofxUI */,
 				C86374571AB65EC200336EDD /* ofxVideoRecorder */,
@@ -463,6 +471,27 @@
 			path = ../../../addons/ofxVideoRecorder/src;
 			sourceTree = "<group>";
 		};
+		C8C231F41AE059630010F840 /* ofxMetaballs */ = {
+			isa = PBXGroup;
+			children = (
+				C8C231F51AE059630010F840 /* src */,
+			);
+			name = ofxMetaballs;
+			sourceTree = "<group>";
+		};
+		C8C231F51AE059630010F840 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				C8C231F61AE059630010F840 /* MarchingCubes.cpp */,
+				C8C231F71AE059630010F840 /* MarchingCubes.h */,
+				C8C231F81AE059630010F840 /* MarchingTetrahedrons.cpp */,
+				C8C231F91AE059630010F840 /* MarchingTetrahedrons.h */,
+				C8C231FA1AE059630010F840 /* ofxMetaballs.h */,
+			);
+			name = src;
+			path = ../../../addons/ofxMetaballs/src;
+			sourceTree = "<group>";
+		};
 		E4328144138ABC890047C5CB /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -608,6 +637,7 @@
 				C80A37481ADDD7CD004DA98A /* ofxUIWidgetWithLabel.cpp in Sources */,
 				C80A37461ADDD7CD004DA98A /* ofxUIWaveform.cpp in Sources */,
 				C80A37441ADDD7CD004DA98A /* ofxUIToggleMatrix.cpp in Sources */,
+				C8C231FC1AE059630010F840 /* MarchingTetrahedrons.cpp in Sources */,
 				C80A37381ADDD7CD004DA98A /* ofxUIRectangle.cpp in Sources */,
 				C80A37551ADDDBFE004DA98A /* tinyxmlparser.cpp in Sources */,
 				C80A37411ADDD7CD004DA98A /* ofxUITextArea.cpp in Sources */,
@@ -652,6 +682,7 @@
 				C80A37311ADDD7CD004DA98A /* ofxUIMinimalSlider.cpp in Sources */,
 				C80A373F1ADDD7CD004DA98A /* ofxUISuperCanvas.cpp in Sources */,
 				C863745B1AB65EC300336EDD /* ofxVideoRecorder.cpp in Sources */,
+				C8C231FB1AE059630010F840 /* MarchingCubes.cpp in Sources */,
 				C80A37351ADDD7CD004DA98A /* ofxUINumberDialer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

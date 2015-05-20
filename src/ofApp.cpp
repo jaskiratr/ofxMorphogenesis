@@ -6,6 +6,20 @@ void ofApp::setup(){
     ofSetVerticalSync(true);
     ofBackground(20);
     
+//    ofSeedRandom(0);
+//    iso.setup(10);
+//    iso.setRadius(400,1000);
+//    vector<ofVec3f> centers;
+//    for(int i = 0; i < 5; i++) {
+//        centers.push_back(ofVec3f(ofRandomuf(), ofRandomuf(), ofRandomuf()));
+//    }
+//    iso.setCenters(centers);
+//    iso.setRadius(8/32., 16./32.);
+//    iso.update();
+//    ofMesh mesh = iso.getMesh();
+//    mesh.save("out-ascii.ply", false);
+//    mesh.save("out-binary.ply", true);
+    
     bShowHelp = true;
     
     bFill       = true;
@@ -27,7 +41,7 @@ void ofApp::setup(){
     bulgeForce = true;
     collisionOffset = true;
     
-    show_force = true;
+    show_force = false;
     show_sphere = true;
     show_springf = false;
     show_planarf = false;
@@ -69,7 +83,7 @@ void ofApp::setup(){
     //GUI
     gui0 = new ofxUISuperCanvas("FORCE FACTORS");
     gui0->addSlider("LINKED LEN", linked_len, 100.0, 10.0);
-    gui0->addSlider("SPRING FACTOR", springFactor, 100.0, 0.01);
+    gui0->addSlider("SPRING FACTOR", springFactor, 5.0, 0.01);
     gui0->addSlider("PLANAR FACTOR", planarFactor, .01, 0.001);
     gui0->addSlider("BULGE FACTOR", bulgeFactor,100, 0.001);
     
@@ -176,12 +190,12 @@ void ofApp::update(){
     //    cout<<collisionOffset<<"\n";
     //Collision Offset
     if(collisionOffset){
-//        ofVec3f sum = ofVec3f(0,0,0);       //WRONG??
-//        ofVec3f diff = ofVec3f(0,0,0);
+        ofVec3f sum = ofVec3f(0,0,0);       //WRONG??
+        ofVec3f diff = ofVec3f(0,0,0);
         for (int i=0; i<pt.size(); i++)
         {
-                        ofVec3f sum = ofVec3f(0,0,0);     //RIGHT?
-                        ofVec3f diff = ofVec3f(0,0,0);
+//                        ofVec3f sum = ofVec3f(0,0,0);     //RIGHT?
+//                        ofVec3f diff = ofVec3f(0,0,0);
             for (int j=0; j<pt.size(); j++)
             {
                 if(((pt[j].pos).distance(pt[i].pos)<roi)&&((pt[j].pos).distance(pt[i].pos)>linked_len))
@@ -221,7 +235,8 @@ void ofApp::draw(){
     ofSetColor(255, 255, 255);
 //    ofDrawBitmapString(ss.str(),15,15);       // DESCRIPTION
     cam.begin();
-
+  
+    //dec the radius // translate to center // use the sphere vectors
 //        cam.enableOrtho();
 //        cam.dolly(1.5);
     //    cam.rotateAround(1, camCenter, camCenter);
@@ -243,11 +258,16 @@ void ofApp::draw(){
     ofSetSphereResolution(30);
     //Background Mesh
     ofSetLineWidth(1);
-    ofDrawSphere(ofGetWidth()/2, ofGetHeight()/2, ofGetWidth()*2);
+//    ofDrawSphere(ofGetWidth()/2, ofGetHeight()/2, ofGetWidth()*2);
     
     ofPushMatrix();
+//    ofScale(2000, 2000, 2000);      // SCALEUP
+//    iso.draw();
+//    //    ofScale(1, 1, 1);
+//    ofScale(0.0005,0.0005,0.0005);
     ofTranslate(0,0,20);
-    
+      //SCALE DOWN
+    ofRotate(ofGetFrameNum()/3.0);
     // Drawing points
 //    if (num>0)
     {
@@ -344,18 +364,24 @@ void ofApp::draw(){
         //The above lines are so you can track the number of frames you've saved and the rough length of your final video
     }
     //-----------------CAM------------------
-    string msg = string("Using mouse inputs to navigate (press 'c' to toggle): ") + (cam.getMouseInputEnabled() ? "YES" : "NO");
-    msg += string("\nShowing help (press 'h' to toggle): ")+ (bShowHelp ? "YES" : "NO");
+    
     if (bShowHelp) {
+        string msg = string("Using mouse inputs to navigate (press 'c' to toggle): ") + (cam.getMouseInputEnabled() ? "YES" : "NO");
+        msg += string("\nShowing help (press 'h' to toggle): ")+ (bShowHelp ? "YES" : "NO");
         msg += "\n\nLEFT MOUSE BUTTON DRAG:\nStart dragging INSIDE the yellow circle -> camera XY rotation .\nStart dragging OUTSIDE the yellow circle -> camera Z rotation (roll).\n\n";
         msg += "LEFT MOUSE BUTTON DRAG + TRANSLATION KEY (" + ofToString(cam.getTranslationKey()) + ") PRESSED\n";
         msg += "OR MIDDLE MOUSE BUTTON (if available):\n";
         msg += "move over XY axes (truck and boom).\n\n";
         msg += "RIGHT MOUSE BUTTON:\n";
         msg += "move over Z axis (dolly)";
+        msg += "\n\nfps: " + ofToString(ofGetFrameRate(), 2);
+        msg += "\n\nPress v to multiply ";
+        msg += "\n\nPress a to visualize the forces ";
+        msg += "\n\nPress 'C' to record";
+        msg += "\n\nPress 'h' to hide this message";
+        ofDrawBitmapStringHighlight(msg, 10, ofGetHeight()-400);
     }
-    msg += "\n\nfps: " + ofToString(ofGetFrameRate(), 2);
-//    ofDrawBitmapStringHighlight(msg, 10, 20);
+
     
     
 }
@@ -556,6 +582,7 @@ void ofApp::keyPressed(int key){
     {
         show_collisiont=!show_collisiont;
     }
+
     
     if(key == ']'){
         radius++;
